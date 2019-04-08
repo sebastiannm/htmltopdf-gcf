@@ -7,8 +7,8 @@
 
 ## Usage
 
-Method: POST
-Required fields in POST body: html
+- Method: POST
+- Required fields in POST body: html
 
 ```
 {
