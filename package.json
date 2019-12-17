@@ -8,6 +8,6 @@
     "deploy": "gcloud functions deploy htmltopdf --trigger-http --runtime nodejs10 --memory 1024MB"
   },
   "dependencies": {
-    "puppeteer": "^1.14.0"
+    "puppeteer": "^2.0.0"
   }
 }
