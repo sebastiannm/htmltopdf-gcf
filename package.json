@@ -5,7 +5,7 @@
     "node": ">=12"
   },
   "scripts": {
-    "deploy": "gcloud functions deploy htmltopdf --trigger-http --runtime nodejs12 --memory 1024MB"
+    "deploy": "gcloud functions deploy htmltopdf --trigger-http --runtime nodejs12 --memory 1024MB --region europe-west1"
   },
   "dependencies": {
     "puppeteer": "^5.2.1"
