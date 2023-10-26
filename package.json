@@ -5,7 +5,8 @@
     "node": ">=14"
   },
   "scripts": {
-    "deploy": "gcloud functions deploy htmltopdf --trigger-http --runtime nodejs20 --memory 1024MB --region europe-west1"
+    "gcp-build": "node node_modules/puppeteer/install.js",
+    "deploy": "gcloud functions deploy htmltopdf --trigger-http --gen2 --runtime nodejs20 --memory 1024MB --region europe-west1 --docker_registry=artifact-registry"
   },
   "dependencies": {
     "puppeteer": "^21.4.1"
