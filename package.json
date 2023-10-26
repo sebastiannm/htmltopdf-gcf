@@ -2,13 +2,13 @@
   "name": "html-to-pdf",
   "version": "1.0.14",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "scripts": {
-    "gcp-build": "node node_modules/puppeteer/install.js",
-    "deploy": "gcloud functions deploy htmltopdf --trigger-http --gen2 --runtime nodejs20 --memory 1024MB --region europe-west1 --docker_registry=artifact-registry"
+    "deploy": "gcloud functions deploy htmltopdf --gen2 --trigger-http --runtime nodejs20 --memory 1024MB --region europe-west1"
   },
   "dependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
     "puppeteer": "^21.4.1"
   }
 }

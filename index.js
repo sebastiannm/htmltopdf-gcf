@@ -1,14 +1,19 @@
+const functions = require("@google-cloud/functions-framework");
 const puppeteer = require("puppeteer");
+
+const PUPPETEER_OPTIONS = {
+  headless: "new",
+};
 
 let page;
 
 async function getBrowserPage() {
   // Launch headless Chrome. Turn off sandbox so Chrome can run under root.
-  const browser = await puppeteer.launch({ headless: "new" });
+  const browser = await puppeteer.launch(PUPPETEER_OPTIONS);
   return browser.newPage();
 }
 
-exports.htmltopdf = async (req, res) => {
+functions.http("htmltopdf", async (req, res) => {
   if (req.method !== "POST") {
     return res.send("Only POST requests are allowed");
   }
@@ -28,4 +33,4 @@ exports.htmltopdf = async (req, res) => {
 
   res.contentType("application/pdf");
   res.send(pdf);
-};
+});
