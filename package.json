@@ -5,9 +5,9 @@
     "node": ">=14"
   },
   "scripts": {
-    "deploy": "gcloud functions deploy htmltopdf --trigger-http --runtime nodejs14 --memory 1024MB --region europe-west1"
+    "deploy": "gcloud functions deploy htmltopdf --trigger-http --runtime nodejs20 --memory 1024MB --region europe-west1"
   },
   "dependencies": {
-    "puppeteer": "^13.1.1"
+    "puppeteer": "^21.4.1"
   }
 }
