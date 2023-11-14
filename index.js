@@ -2,7 +2,7 @@ const functions = require("@google-cloud/functions-framework");
 const puppeteer = require("puppeteer");
 
 const PUPPETEER_OPTIONS = {
-  headless: "new",
+  headless: true,
 };
 
 let page;
@@ -28,8 +28,20 @@ functions.http("htmltopdf", async (req, res) => {
     page = await getBrowserPage();
   }
 
-  await page.setContent(body.html, { waitUntil: "networkidle0" });
-  const pdf = await page.pdf(body.opts);
+  try {
+    await page.setContent(body.html, {
+      waitUntil: "networkidle0",
+    });
+  } catch (err) {
+    throw err;
+  }
+
+  let pdf;
+  try {
+    pdf = await page.pdf(body.opts, { timeout: 60000 });
+  } catch (err) {
+    throw err;
+  }
 
   res.contentType("application/pdf");
   res.send(pdf);

@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- NODE >= 10
+- NODE >= 20
 - Google Cloud SDK Installed
 
 ## Usage

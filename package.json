@@ -1,14 +1,14 @@
 {
   "name": "html-to-pdf",
-  "version": "1.0.14",
+  "version": "1.0.16",
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "scripts": {
     "deploy": "gcloud functions deploy htmltopdf --gen2 --trigger-http --runtime nodejs20 --memory 1024MB --region europe-west1"
   },
   "dependencies": {
     "@google-cloud/functions-framework": "^3.3.0",
-    "puppeteer": "^21.5.0"
+    "puppeteer": "^21.5.1"
   }
 }
